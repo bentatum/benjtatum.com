@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "name": "benjtatum.com",
+  "alias": "benjtatum.com",
+  "builds": [
+    { "src": "www/package.json", "use": "@now/next" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/www/$1" }
+  ]
+}

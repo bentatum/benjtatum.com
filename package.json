@@ -1,0 +1,11 @@
+{
+  "name": "benjtatum.com",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "now dev",
+    "deploy": "now",
+    "deploy:prod": "now --target=production"
+  }
+}
