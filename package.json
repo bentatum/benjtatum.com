@@ -6,6 +6,9 @@
   "scripts": {
     "dev": "now dev",
     "deploy": "now",
-    "deploy:prod": "now --target=production"
+    "deploy:prod": "now --prod"
+  },
+  "dependencies": {
+    "now": "^16.2.0"
   }
 }

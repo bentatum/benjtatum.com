@@ -3,7 +3,7 @@
   "name": "benjtatum.com",
   "alias": "benjtatum.com",
   "builds": [
-    { "src": "www/package.json", "use": "@now/next" }
+    { "src": "www/package.json", "use": "@now/next", "config": { "maxLambdaSize": "5mb" } }
   ],
   "routes": [
     { "src": "/(.*)", "dest": "/www/$1" }
