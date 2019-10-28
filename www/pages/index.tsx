@@ -5,6 +5,7 @@ import GithubIcon from "../components/github-icon";
 import ClincIcon from "../components/clinc-icon";
 import theme from "../lib/theme";
 import { cx } from "emotion";
+import ResamplIcon from "../components/resampl-icon";
 
 type Position = {
   top: number;
@@ -18,7 +19,7 @@ const Home = () => {
     left: 0
   });
   const [cursorVisible, setCursorVisible] = useState<boolean>(false);
-  const [mouseDown, setMouseDown] = useState<boolean>(false)
+  const [mouseDown, setMouseDown] = useState<boolean>(false);
   const delay = 8;
   let endX: number = 0;
   let endY: number = 0;
@@ -69,12 +70,12 @@ const Home = () => {
         setCursorVisible(false);
       });
       document.addEventListener("mousedown", event => {
-        console.log('ok')
-        setMouseDown(true)
-      })
+        console.log("ok");
+        setMouseDown(true);
+      });
       document.addEventListener("mouseup", event => {
-        setMouseDown(false)
-      })
+        setMouseDown(false);
+      });
     }
 
     setupEventListeners();
@@ -103,24 +104,24 @@ const Home = () => {
         }}
       />
 
-      <div className="title-vail" />
+      {/* <div className="title-vail" />
       <div className="title-wrap">
         <h1>
           <span className="title-wrap__top">{Array(100).fill("Ben").join(' ')}</span>
           <br />
           <span className="title-wrap__bottom">{Array(100).fill("Tatum").join(' ')}</span>
         </h1>
-      </div>
+      </div> */}
 
       <nav className="nav">
         <a href="https://clinc.com" target="_blank">
           <ClincIcon />
         </a>
-        <a href="https://github.com/bentatum" target="__blank">
-          <GithubIcon />
-        </a>
         <a href="https://twitter.com/benjtatum" target="__blank">
           <TwitterIcon />
+        </a>
+        <a href="https://resampl.com/ben" target="_blank">
+          <ResamplIcon />
         </a>
       </nav>
 
@@ -205,8 +206,6 @@ const Home = () => {
 
         nav {
           z-index: 3;
-          position: absolute;
-          bottom: 0;
           padding: ${theme.space.lg}px;
           width: 100%;
           display: flex;
