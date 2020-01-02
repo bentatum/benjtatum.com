@@ -3,6 +3,7 @@
   import ClincIcon from "../components/ClincIcon.svelte";
   import ResamplIcon from "../components/ResamplIcon.svelte";
   import Avatar from "../components/Avatar.svelte";
+  import IconButton from "../components/IconButton.svelte";
 </script>
 
 <style>
@@ -17,11 +18,12 @@
 
   nav {
     display: grid;
-    grid-gap: 1em;
+    grid-gap: 2em;
     grid-auto-flow: column;
+    align-items: center;
   }
 
-  nav a {
+  :global(nav .icon-button) {
     color: var(--text-color);
     font-size: 1rem;
     height: 5vh;
@@ -35,9 +37,10 @@
     z-index: 1;
   }
 
-  nav a:hover, nav a:focus {
+  :global(nav .icon-button:hover),
+  :global(nav .icon-button:focus) {
     color: var(--link-color);
-    font-size: 3rem;
+    font-size: 2rem;
     z-index: 2;
     outline: none;
   }
@@ -53,14 +56,14 @@
     <Avatar src="/ben-tatum.jpeg" style="box-shadow: var(--shadow)" />
   </a>
   <nav>
-    <a href="https://clinc.com" target="_blank">
+    <IconButton href="https://clinc.com" target="_blank">
       <ClincIcon />
-    </a>
-    <a href="https://twitter.com/benjtatum" target="_blank">
+    </IconButton>
+    <IconButton href="https://twitter.com/benjtatum" target="_blank">
       <TwitterIcon />
-    </a>
-    <a href="https://resampl.com" target="_blank">
+    </IconButton>
+    <IconButton href="https://resampl.com" target="_blank">
       <ResamplIcon />
-    </a>
+    </IconButton>
   </nav>
 </div>

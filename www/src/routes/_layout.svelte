@@ -1,9 +1,13 @@
+<script>
+  import Cursor from "../components/Cursor.svelte";
+</script>
+
 <style>
   :global(:root) {
     --link-color: orange;
     --bg-color: white;
     --text-color: black;
-    --hover-opacity: 0.15;
+    --hover-opacity: 0.05;
     --font-weight-heavy: 500;
     --space: 8px;
     --screen-sm: 300px;
@@ -34,10 +38,6 @@
     max-width: var(--screen-sm);
   }
 </style>
-
-<script>
-import Cursor from '../components/Cursor.svelte'
-</script>
 
 <Cursor />
 
