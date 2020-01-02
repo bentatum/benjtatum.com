@@ -4,17 +4,11 @@
   "alias": "benjtatum.com",
   "builds": [
     {
-      "src": "www-svelte-sapper/package.json",
+      "src": "package.json",
       "use": "https://github.com/ajbouh/now-sapper",
       "config": {
         "runtime": "nodejs12.x"
       }
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/www-svelte-sapper/$1"
     }
   ]
 }
