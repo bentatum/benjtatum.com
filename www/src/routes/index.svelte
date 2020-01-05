@@ -4,6 +4,29 @@
   import ResamplIcon from "../components/ResamplIcon.svelte";
   import Avatar from "../components/Avatar.svelte";
   import IconButton from "../components/IconButton.svelte";
+  import QuestionMarkIcon from "../components/QuestionMarkIcon.svelte";
+  import { tweened } from "svelte/motion";
+  import * as easing from "svelte/easing";
+
+  const ICON_SIZE_SM = 25;
+  const ICON_SIZE_LG = 35;
+
+  const tweenOpts = {
+    duration: 1000,
+    easing: easing.elasticOut
+  };
+
+  let clincIconSize = tweened(ICON_SIZE_SM, tweenOpts);
+  let twitterIconSize = tweened(ICON_SIZE_SM, tweenOpts);
+  let resamplIconSize = tweened(ICON_SIZE_SM, tweenOpts);
+
+  function onMouseEnter(iconSize) {
+    iconSize.set(ICON_SIZE_LG);
+  }
+
+  function onMouseLeave(iconSize) {
+    iconSize.set(ICON_SIZE_SM);
+  }
 </script>
 
 <style>
@@ -21,34 +44,18 @@
     grid-gap: 2em;
     grid-auto-flow: column;
     align-items: center;
-  }
-
-  :global(nav .icon-button) {
-    color: var(--text-color);
-    font-size: 1rem;
-    height: 5vh;
-    width: 5vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition-property: font-size, background-color;
-    transition-duration: 100ms;
-    transition-timing-function: ease-in-out;
     z-index: 1;
   }
 
-  :global(nav .icon-button:hover),
-  :global(nav .icon-button:focus) {
-    color: var(--link-color);
-    font-size: 2rem;
-    z-index: 2;
-    outline: none;
-  }
   .avatar-link {
     outline: none;
     margin-bottom: calc(var(--space) * 2);
     user-select: none;
   }
+
+  /* .help {
+    font-size: 4rem;
+  } */
 </style>
 
 <div class="content">
@@ -56,14 +63,29 @@
     <Avatar src="/ben-tatum.jpeg" style="box-shadow: var(--shadow)" />
   </a>
   <nav>
-    <IconButton href="https://clinc.com" target="_blank">
-      <ClincIcon />
+    <IconButton
+      href="https://clinc.com"
+      target="_blank"
+      color="primary"
+      on:mouseenter={() => onMouseEnter(clincIconSize)}
+      on:mouseleave={() => onMouseLeave(clincIconSize)}>
+      <ClincIcon size={$clincIconSize} />
     </IconButton>
-    <IconButton href="https://twitter.com/benjtatum" target="_blank">
-      <TwitterIcon />
+    <IconButton
+      href="https://twitter.com/benjtatum"
+      target="_blank"
+      color="primary"
+      on:mouseenter={() => onMouseEnter(twitterIconSize)}
+      on:mouseleave={() => onMouseLeave(twitterIconSize)}>
+      <TwitterIcon size={$twitterIconSize} />
     </IconButton>
-    <IconButton href="https://resampl.com" target="_blank">
-      <ResamplIcon />
+    <IconButton
+      href="https://resampl.com"
+      target="_blank"
+      color="primary"
+      on:mouseenter={() => onMouseEnter(resamplIconSize)}
+      on:mouseleave={() => onMouseLeave(resamplIconSize)}>
+      <ResamplIcon size={$resamplIconSize} />
     </IconButton>
   </nav>
 </div>

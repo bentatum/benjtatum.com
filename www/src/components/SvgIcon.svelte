@@ -3,12 +3,10 @@
 
   const dispatch = createEventDispatcher();
 
-  function onMouseOver(event) {
-    dispatch("mouseover", event);
-  }
-
   export let viewBox;
   export let fill;
+  export let style;
+  export let size = 40;
 </script>
 
 <style>
@@ -19,11 +17,11 @@
     display: inline-block;
     fill: currentColor;
     flex-shrink: 0;
-    /* font-size: 1rem; */
   }
 </style>
 
 <svg
+  style="height:{size}px;width:{size}px;{style || ''}"
   {viewBox}
   {fill}
   on:mouseover={e => dispatch('mouseover', e)}

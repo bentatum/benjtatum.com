@@ -3,6 +3,8 @@
   import { tweened } from "svelte/motion";
   import { cubicOut } from "svelte/easing";
 
+  export let size;
+
   const duration = 2000;
 
   let X1_START = 7.60284887;
@@ -47,6 +49,7 @@
 </script>
 
 <SvgIcon
+  {size}
   viewBox="0 0 76 76"
   fill="currentColor"
   on:mouseenter={onMouseEnter}

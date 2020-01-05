@@ -2,9 +2,8 @@
   import { tweened, spring } from "svelte/motion";
   import * as easing from "svelte/easing";
   import { longpress } from "../lib/longpress.js";
+  import { onMount } from "svelte";
 
-  // let endX = window.innerWidth / 2;
-  // let endY = window.innerHeight / 2;
   let dotCoords = spring(
     { x: 0, y: 0 },
     {
@@ -20,13 +19,17 @@
     }
   );
 
-  const OUTLINE_SIZE_SM = 75;
-  const OUTLINE_SIZE_LG = 150;
-  const OUTLINE_SIZE_XL = 200;
+  const OUTLINE_SIZE = 75;
+  const DOT_SIZE = 2;
+  const LIMIT = 500;
 
-  let outlineSize = tweened(OUTLINE_SIZE_SM, {
-    duration: 500,
-    easing: easing.elasticOut
+  let outlineSize = tweened(OUTLINE_SIZE, {
+    duration: 1000,
+    easing: easing.elasticInOut
+  });
+
+  let dotSize = tweened(DOT_SIZE, {
+    duration: 200
   });
 
   let cursorVisible = false;
@@ -47,17 +50,35 @@
     outlineCoords.set({ x, y });
     cursorVisible = false;
   }
+
+  function onMouseDown() {
+    dotSize.set($dotSize + 1);
+    outlineSize.set($outlineSize * 1.5);
+  }
+
+  $: if ($outlineSize >= LIMIT) {
+    dotSize.set(DOT_SIZE);
+    outlineSize.set(OUTLINE_SIZE);
+  }
+
+  function onLongPress() {
+    dotSize.set($dotSize * 2);
+    outlineSize.set($outlineSize * 2);
+  }
+
+  onMount(() => {
+    const x = window.innerWidth / 2;
+    const y = window.innerHeight / 2;
+    dotCoords.set({ x, y });
+    outlineCoords.set({ x, y });
+  });
 </script>
 
 <style>
-  /* :global(:root) {
-    --cursor-color: orange;
-  }
-
   :global(body),
   :global(a) {
     cursor: none;
-  } */
+  }
 
   svg {
     height: 100%;
@@ -79,14 +100,13 @@
   <circle
     cx={$outlineCoords.x}
     cy={$outlineCoords.y}
-    r={$outlineSize}
-    style="opacity:{cursorVisible ? 0.1 : 0};" />
+    r={$outlineSize > 0 ? $outlineSize : 0}
+    style="opacity:0.075;" />
   <circle
     cx={$dotCoords.x}
     cy={$dotCoords.y}
-    r={4}
-    use:longpress={1000}
-    on:longpress={() => outlineSize.set(OUTLINE_SIZE_XL)}
-    on:mousedown={() => outlineSize.set(OUTLINE_SIZE_LG)}
-    on:mouseup={() => outlineSize.set(OUTLINE_SIZE_SM)} />
+    r={$dotSize > 0 ? $dotSize : 0}
+    use:longpress={2000}
+    on:longpress={onLongPress}
+    on:mousedown={onMouseDown} />
 </svg>

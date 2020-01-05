@@ -1,8 +1,9 @@
 <script>
   import SvgIcon from "./SvgIcon.svelte";
+  export let size;
 </script>
 
-<SvgIcon viewBox="0 0 24 24" fill="currentColor">
+<SvgIcon viewBox="0 0 24 24" fill="currentColor" {size}>
   <g>
     <path
       d="M23.643 4.937c-.835.37-1.732.62-2.675.733.962-.576 1.7-1.49
