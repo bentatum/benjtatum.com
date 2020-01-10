@@ -56,6 +56,8 @@
     class="icon-button"
     class:color-primary={color === 'primary'}
     class:variant-text={variant === 'text'}
+    on:focusin={e => dispatch('focusin', e)}
+    on:focusout={e => dispatch('focusout', e)}
     on:mouseenter={e => dispatch('mouseenter', e)}
     on:mouseleave={e => dispatch('mouseleave', e)}>
     <slot />
@@ -65,6 +67,8 @@
     class="icon-button"
     class:color-primary={color === 'primary'}
     class:variant-text={variant === 'text'}
+    on:focusin={e => dispatch('focusin', e)}
+    on:focusout={e => dispatch('focusout', e)}
     on:mouseenter={e => dispatch('mouseenter', e)}
     on:mouseleave={e => dispatch('mouseleave', e)}>
     <slot />

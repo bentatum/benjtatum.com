@@ -77,7 +77,7 @@
 <style>
   :global(body),
   :global(a) {
-    cursor: none;
+    cursor: none !important;
   }
 
   svg {

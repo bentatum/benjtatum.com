@@ -68,7 +68,9 @@
       target="_blank"
       color="primary"
       on:mouseenter={() => onMouseEnter(clincIconSize)}
-      on:mouseleave={() => onMouseLeave(clincIconSize)}>
+      on:mouseleave={() => onMouseLeave(clincIconSize)}
+      on:focusin={() => onMouseEnter(clincIconSize)}
+      on:focusout={() => onMouseLeave(clincIconSize)}>
       <ClincIcon size={$clincIconSize} />
     </IconButton>
     <IconButton
@@ -76,7 +78,9 @@
       target="_blank"
       color="primary"
       on:mouseenter={() => onMouseEnter(twitterIconSize)}
-      on:mouseleave={() => onMouseLeave(twitterIconSize)}>
+      on:mouseleave={() => onMouseLeave(twitterIconSize)}
+      on:focusin={() => onMouseEnter(twitterIconSize)}
+      on:focusout={() => onMouseLeave(twitterIconSize)}>
       <TwitterIcon size={$twitterIconSize} />
     </IconButton>
     <IconButton
@@ -84,7 +88,9 @@
       target="_blank"
       color="primary"
       on:mouseenter={() => onMouseEnter(resamplIconSize)}
-      on:mouseleave={() => onMouseLeave(resamplIconSize)}>
+      on:mouseleave={() => onMouseLeave(resamplIconSize)}
+      on:focusin={() => onMouseEnter(resamplIconSize)}
+      on:focusout={() => onMouseLeave(resamplIconSize)}>
       <ResamplIcon size={$resamplIconSize} />
     </IconButton>
   </nav>
