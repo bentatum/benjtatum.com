@@ -6,7 +6,5 @@
 
 <div class="relative">
 	<SpotlightCursor />
-	<main>
-		<slot />
-	</main>
+	<slot />
 </div>

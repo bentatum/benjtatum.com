@@ -5,7 +5,7 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-				display: ['"Single Day"', 'cursive']
+				sans: ['"Roboto"', 'sans-serif']
 			},
 			fontSize: {
 				xs: '1.2rem',

@@ -61,7 +61,7 @@
 
 <svelte:body on:mousemove={onMouseMove} on:mouseover={onMouseOver} on:mouseout={onMouseOut} />
 
-<svg class="w-full h-full absolute">
+<svg class="w-full h-full absolute z-20 pointer-events-none">
 	<circle
 		class="opacity-10"
 		cx={$outlineCoords.x}
@@ -83,6 +83,6 @@
 		cursor: none !important;
 	}
 	circle {
-		fill: orange;
+		fill: dodgerblue;
 	}
 </style>
