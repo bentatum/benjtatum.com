@@ -85,4 +85,9 @@
 	circle {
 		fill: black;
 	}
+	@media (prefers-color-scheme: dark) {
+		circle {
+			fill: #f59e0b;
+		}
+	}
 </style>
