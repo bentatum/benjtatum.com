@@ -83,6 +83,6 @@
 		cursor: none !important;
 	}
 	circle {
-		fill: dodgerblue;
+		fill: black;
 	}
 </style>
