@@ -1,5 +1,6 @@
 <script lang="ts">
 	import IconButton from './IconButton.svelte';
+	import FlaskIcon from './icons/FlaskIcon.svelte';
 	import FyeAfIcon from './icons/FyeAFIcon.svelte';
 	import GithubIcon from './icons/GithubIcon.svelte';
 	import ResamplIcon from './icons/ResamplIcon.svelte';
@@ -18,5 +19,8 @@
 	</IconButton>
 	<IconButton href="https://resampl.com" target="_blank">
 		<ResamplIcon />
+	</IconButton>
+	<IconButton href="https://yieldxscience.com" target="_blank">
+		<FlaskIcon />
 	</IconButton>
 </nav>
