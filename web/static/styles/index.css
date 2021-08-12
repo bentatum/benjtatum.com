@@ -694,8 +694,14 @@ video {
 .text-lg {
 	font-size: 1.8rem;
 }
-.text-sm {
-	font-size: 1.3rem;
+.text-xl {
+	font-size: 2rem;
+}
+.text-2xl {
+	font-size: 4rem;
+}
+.text-base {
+	font-size: 1.4rem;
 }
 .font-black {
 	font-weight: 900;
@@ -767,5 +773,19 @@ video {
 	.dark\:text-yellow-500 {
 		--tw-text-opacity: 1;
 		color: rgba(245, 158, 11, var(--tw-text-opacity));
+	}
+}
+@media (min-width: 640px) {
+
+	.sm\:text-2xl {
+		font-size: 4rem;
+	}
+
+	.sm\:text-3xl {
+		font-size: 7rem;
+	}
+
+	.sm\:text-xl {
+		font-size: 2rem;
 	}
 }
