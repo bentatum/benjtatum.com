@@ -19,7 +19,7 @@
 	);
 	const OUTLINE_SIZE = 20;
 	const DOT_SIZE = 2;
-	const LIMIT = 500;
+
 	let outlineSize = tweened(OUTLINE_SIZE, {
 		duration: 1000,
 		easing: easing.elasticInOut
