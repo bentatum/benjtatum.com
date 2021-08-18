@@ -13,7 +13,7 @@
 		'p-1': size === 'small',
 		'p-2': size === 'medium',
 		'inline-flex items-center relative overflow-hidden rounded-full': true,
-		'hover:bg-gray-400 hover:bg-opacity-10': true,
+		'hover:bg-black hover:bg-opacity-10': true,
 		'focus:outline-none focus:ring ring-inset ring-black ring-opacity-20': true,
 		[$$props.class]: true
 	});
