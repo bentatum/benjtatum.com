@@ -6,6 +6,7 @@
 	let sketch;
 	onMount(async () => {
 		sketch = (await import(`../../sketches/${$page.params.sketch}`)).sketch;
+		console.log(sketch);
 	});
 </script>
 

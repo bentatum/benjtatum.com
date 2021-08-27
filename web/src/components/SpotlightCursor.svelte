@@ -29,7 +29,6 @@
 	});
 	let cursorVisible = false;
 	function onMouseMove({ pageX: x, pageY: y }) {
-		console.log('moving');
 		dotCoords.set({ x, y });
 		outlineCoords.set({ x, y });
 	}
