@@ -4,7 +4,7 @@
 	import '../styles/ripple.css';
 </script>
 
-<div class="relative">
+<main class="relative">
 	<SpotlightCursor />
 	<slot />
-</div>
+</main>
