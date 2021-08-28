@@ -1,17 +1,30 @@
-<script lang="ts">
-	import P5 from '../../components/canvas/P5.svelte';
-	import { page } from '$app/stores';
-	import { onMount } from 'svelte';
-
-	let sketch;
-	onMount(async () => {
-		sketch = (await import(`../../sketches/${$page.params.sketch}`)).sketch;
-		console.log(sketch);
-	});
+<script context="module" lang="ts">
+	export async function load({ page }) {
+		return {
+			props: {
+				sketch: (await import(`./_sketches/${page.params.sketch}.ts`)).sketch
+			}
+		};
+	}
 </script>
 
-{#if sketch}
-	<div class="h-screen w-full grid place-items-center">
+<script lang="ts">
+	import P5 from '../../components/canvas/P5.svelte';
+	// import { page } from '$app/stores';
+	// import { onMount } from 'svelte';
+
+	export let sketch;
+	// onMount(async () => {
+	// 	try {
+	// 		sketch = (await import(`./_sketches/${$page.params.sketch}.ts`)).sketch;
+	// 	} catch (error) {
+	// 		console.log(error);
+	// 	}
+	// });
+</script>
+
+<div class="h-screen w-full grid place-items-center">
+	{#if sketch}
 		<P5 {sketch} />
-	</div>
-{/if}
+	{/if}
+</div>
