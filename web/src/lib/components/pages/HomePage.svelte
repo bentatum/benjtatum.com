@@ -1,8 +1,9 @@
 <script lang="ts">
+	import Layout from '../layout/Layout.svelte';
 	import MyLinksNav from '../MyLinksNav.svelte';
 </script>
 
-<div class="dark:text-white min-h-screen w-full">
+<Layout>
 	<div class="h-screen grid place-items-center z-10">
 		<div class="text-center">
 			<h1
@@ -15,4 +16,4 @@
 			</div>
 		</div>
 	</div>
-</div>
+</Layout>

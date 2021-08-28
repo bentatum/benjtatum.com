@@ -1,5 +1,5 @@
 <script lang="ts">
-	import IconButton from './IconButton.svelte';
+	import IconButton from './elements/IconButton.svelte';
 	import FlaskIcon from './icons/FlaskIcon.svelte';
 	import FyeAfIcon from './icons/FyeAFIcon.svelte';
 	import GithubIcon from './icons/GithubIcon.svelte';

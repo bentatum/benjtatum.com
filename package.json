@@ -5,5 +5,10 @@
   "license": "MIT",
   "scripts": {
     "start": "vc dev"
+  },
+  "devDependencies": {
+    "@types/node": "^16.7.4",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7"
   }
 }

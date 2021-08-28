@@ -1,5 +1,5 @@
 import type p5 from 'p5';
-import randomColorVNumber from './utils/randomColorVNumber';
+import randomColorVNumber from '../utils/randomColorVNumber';
 
 export const sketch = (p: p5) => {
 	p.setup = () => {
@@ -22,5 +22,6 @@ export const sketch = (p: p5) => {
 				p.square(x * s, y * s, s);
 			}
 		}
+		// p.saveCanvas();
 	};
 };

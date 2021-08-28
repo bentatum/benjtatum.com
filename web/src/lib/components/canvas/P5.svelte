@@ -1,9 +1,10 @@
 <script lang="ts">
+	import type p5 from 'p5';
 	import { onMount, createEventDispatcher } from 'svelte';
 	// API properties
 	export let project = undefined;
 	export let target = undefined;
-	export let sketch;
+	export let sketch: (instance: p5) => void;
 	// Event generation
 	const event = createEventDispatcher();
 	const dispatch = {
@@ -36,13 +37,13 @@
 	}
 
 	onMount(async () => {
-		const p5 = (await import('p5')).default;
-		const entries = Object.entries(p5);
+		const P5 = (await import('p5')).default;
+		const entries = Object.entries(P5);
 		const nativeClasses = entries.filter(
 			([key, value]) => value instanceof Function && key[0] !== '_' && key !== 'default'
 		);
 
-		project = new p5((instance) => {
+		project = new P5((instance) => {
 			instance = augmentClasses(instance, nativeClasses);
 			return sketch(instance);
 		}, target);

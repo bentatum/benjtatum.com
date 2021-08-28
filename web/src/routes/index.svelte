@@ -3,7 +3,7 @@
 </script>
 
 <script lang="ts">
-	import HomePage from '../components/pages/HomePage.svelte';
+	import HomePage from '$lib/components/pages/HomePage.svelte';
 </script>
 
 <svelte:head>
