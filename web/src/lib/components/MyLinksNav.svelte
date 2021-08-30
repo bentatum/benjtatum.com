@@ -5,9 +5,13 @@
 	import GithubIcon from './icons/GithubIcon.svelte';
 	import ResamplIcon from './icons/ResamplIcon.svelte';
 	import TwitterIcon from './icons/TwitterIcon.svelte';
+	import FaceIcon from './icons/FaceIcon.svelte';
 </script>
 
 <nav class="select-none">
+	<IconButton href="/sketch/1">
+		<FaceIcon />
+	</IconButton>
 	<IconButton href="https://twitter.com/benjtatum" target="_blank">
 		<TwitterIcon />
 	</IconButton>

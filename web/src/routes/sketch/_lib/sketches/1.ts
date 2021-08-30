@@ -1,5 +1,8 @@
 import type p5 from 'p5';
-import randomColorVNumber from '../utils/randomColorVNumber';
+import { randomColorVNumber } from '../utils/number-utils';
+
+export const title = 'Randomness';
+export const description = 'An experiment with rgba randomness.';
 
 export const sketch = (p: p5) => {
 	p.setup = () => {

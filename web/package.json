@@ -46,6 +46,7 @@
 		"classnames": "^2.3.1",
 		"cookie": "^0.4.1",
 		"p5-svelte": "^2.2.2",
+		"p5.createloop": "^0.2.8",
 		"svelte-forms-lib": "^1.10.3",
 		"svelte-preprocess": "^4.8.0"
 	}

@@ -7,7 +7,7 @@
 </script>
 
 <svelte:head>
-	<title>bent.</title>
+	<title>bent | engineer / entrepreneur</title>
 </svelte:head>
 
 <HomePage />
