@@ -5,7 +5,6 @@
 <script lang="ts">
 	import { browser } from '$app/env';
 	import type p5 from 'p5';
-	import { onMount } from 'svelte';
 	import { writable } from 'svelte/store';
 
 	type Sketch = (instance: p5) => void;
@@ -68,7 +67,7 @@
 	}
 </script>
 
-<div use:ref class="shadow-xl" />
+<div use:ref class="shadow-xl border-8 border-black" />
 
 <style>
 	div {

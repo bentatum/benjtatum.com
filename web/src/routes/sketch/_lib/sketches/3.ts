@@ -2,8 +2,9 @@ import type p5 from 'p5';
 import { randomColorVNumber, randomNumber } from '../utils/number-utils';
 // import { randomNumber } from '../utils/number-utils';
 
-export const title = 'A light beam';
-export const description = 'An experiment with rgba randomness.';
+export const title = 'Kids blanket';
+export const description =
+	'I used to have a blanket set with primary colors and squares. I used circles here, but this reminds me of that.';
 
 const palette = [
 	{
@@ -62,7 +63,7 @@ export const sketch = (p: p5) => {
 
 	p.draw = () => {
 		p.background(255);
-		let percent, alpha, c;
+		let percent, alpha;
 		for (let x = p.height; x > 0; x--) {
 			percent = x / p.width;
 			alpha = Math.max(percent * 30, 100);
