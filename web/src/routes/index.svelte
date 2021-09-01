@@ -3,11 +3,11 @@
 </script>
 
 <script lang="ts">
-	import HomePage from '../components/pages/HomePage.svelte';
+	import HomePage from '$lib/components/pages/HomePage.svelte';
 </script>
 
 <svelte:head>
-	<title>bent.</title>
+	<title>bent | engineer / entrepreneur</title>
 </svelte:head>
 
 <HomePage />

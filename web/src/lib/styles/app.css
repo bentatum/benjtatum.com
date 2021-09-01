@@ -10,5 +10,13 @@
 body {
 	min-height: 100vh;
 	margin: 0;
-	background-color: #000;
+	background-color: black;
+	color: white;
+}
+
+@media (prefers-color-scheme: light) {
+	body {
+		background-color: white;
+		color: black;
+	}
 }

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import createRipple from '../lib/ripple';
+	import createRipple from '$lib/ripple';
 	import cx from 'classnames';
 
 	type Component = 'a' | 'button' | 'div';

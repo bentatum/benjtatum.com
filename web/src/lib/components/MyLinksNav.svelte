@@ -1,13 +1,17 @@
 <script lang="ts">
-	import IconButton from './IconButton.svelte';
+	import IconButton from './elements/IconButton.svelte';
 	import FlaskIcon from './icons/FlaskIcon.svelte';
 	import FyeAfIcon from './icons/FyeAFIcon.svelte';
 	import GithubIcon from './icons/GithubIcon.svelte';
 	import ResamplIcon from './icons/ResamplIcon.svelte';
 	import TwitterIcon from './icons/TwitterIcon.svelte';
+	import FaceIcon from './icons/FaceIcon.svelte';
 </script>
 
 <nav class="select-none">
+	<IconButton href="/sketch/1">
+		<FaceIcon />
+	</IconButton>
 	<IconButton href="https://twitter.com/benjtatum" target="_blank">
 		<TwitterIcon />
 	</IconButton>
